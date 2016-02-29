@@ -290,7 +290,7 @@ nexus:
     LDAP_GROUP_BASE_DN: "ou=groups"
     LDAP_BIND_PASSWORD: ${LDAP_PWD}
     
-  jira:
+jira:
   container_name: jira
   restart: always
   image: johniepaulie/jirahostcentric:1.1
