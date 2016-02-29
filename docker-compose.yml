@@ -186,7 +186,7 @@ sonar:
 jenkins:
   container_name: jenkins
   restart: always
-  image: accenture/adop-jenkins:0.1.0
+  image: johniepaulie/jenkins:1.0
   #build: ../images/docker-jenkins/
   net: ${CUSTOM_NETWORK_NAME}
   expose:
@@ -231,6 +231,7 @@ jenkins:
     DOCKER_HOST: ${DOCKER_HOST}
     DOCKER_CLIENT_CERT_PATH: ${DOCKER_CLIENT_CERT_PATH}
     DOCKER_NETWORK_NAME: ${CUSTOM_NETWORK_NAME}
+    JIRA_URL: "http://${TARGET_HOST}/jira"
 
 jenkins-slave:
   container_name: jenkins-slave
@@ -288,3 +289,13 @@ nexus:
     LDAP_USER_BASE_DN: "ou=people"
     LDAP_GROUP_BASE_DN: "ou=groups"
     LDAP_BIND_PASSWORD: ${LDAP_PWD}
+    
+  jira:
+  container_name: jira
+  restart: always
+  image: johniepaulie/jirahostcentric:1.1
+  net: ${CUSTOM_NETWORK_NAME}
+  expose:
+    - "8082"
+  environment:
+    JIRA_BASE_URL: "http://${TARGET_HOST}/jira"
