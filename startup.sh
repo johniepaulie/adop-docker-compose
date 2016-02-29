@@ -104,7 +104,9 @@ fi
 export TARGET_HOST=$(docker-machine ip $MACHINE_NAME)
 export LOGSTASH_HOST=$(docker-machine ip $MACHINE_NAME)
 
+docker-compose -f compose/elk.yml pull
 docker-compose -f docker-compose.yml -f etc/volumes/${VOLUME_DRIVER}/default.yml $LOGGING_OVERRIDE ${OVERRIDES} pull
+docker-compose -f compose/elk.yml up -d
 docker-compose -f docker-compose.yml -f etc/volumes/${VOLUME_DRIVER}/default.yml $LOGGING_OVERRIDE ${OVERRIDES} up -d
 
 # Wait for Jenkins and Gerrit to come up before proceeding
