@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: accenture/adop-nginx:0.1.0
+  image: johniepaulie/nginx:1.0
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
@@ -186,7 +186,7 @@ sonar:
 jenkins:
   container_name: jenkins
   restart: always
-  image: johniepaulie/jenkinshost:1.0
+  image: johniepaulie/jenkinshost:2.0
   #build: ../images/docker-jenkins/
   net: ${CUSTOM_NETWORK_NAME}
   expose:
