@@ -114,8 +114,8 @@ until [[ $(docker exec jenkins curl -I -s jenkins:jenkins@localhost:8080/jenkins
 until [[ $(docker exec gerrit curl -I -s gerrit:gerrit@localhost:8080/gerrit/|head -n 1|cut -d$' ' -f2) == 200 ]]; do echo \"Gerrit unavailable, sleeping for 60s\"; sleep 60; done
 
 # Trigger Load_Platform in Jenkins
-docker exec jenkins curl -X POST jenkins:jenkins@localhost:8080/jenkins/job/Load_Platform/buildWithParameters \
-	--data token=gAsuE35s \
+#docker exec jenkins curl -X POST jenkins:jenkins@localhost:8080/jenkins/job/Load_Platform/buildWithParameters \
+#	--data token=gAsuE35s \
 
 # Generate and copy the certificates to jenkins slave
 $(pwd)/generate_client_certs.sh ${DOCKER_CLIENT_CERT_PATH} 1> /dev/null
