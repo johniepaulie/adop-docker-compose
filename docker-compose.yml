@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: johniepaulie/nginx:1.0
+  image: johniepaulie/nginx:2.0
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
@@ -293,7 +293,7 @@ nexus:
 jira:
   container_name: jira
   restart: always
-  image: johniepaulie/jira:2.0
+  image: johniepaulie/jira:2.1
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "8082"
