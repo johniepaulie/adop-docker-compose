@@ -298,5 +298,3 @@ jira:
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "8082"
-  environment:
-    JIRA_BASE_URL: "http://${TARGET_HOST}/jira"
