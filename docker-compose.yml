@@ -192,7 +192,6 @@ jenkins:
   expose:
     - "8080"
     - "50000"
-    - "21"
   ports:
     - "21:21"
   privileged: true
