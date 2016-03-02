@@ -192,8 +192,7 @@ jenkins:
   expose:
     - "8080"
     - "50000"
-  ports:
-    - "21:21"
+    - "21"
   privileged: true
   environment:
     JENKINS_OPTS: "--prefix=/jenkins"
