@@ -294,7 +294,7 @@ nexus:
 jira:
   container_name: jira
   restart: always
-  image: johniepaulie/jira:6.0
+  image: johniepaulie/jira:6.2
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "8082"
