@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: johniepaulie/nginx:4.3
+  image: johniepaulie/nginx:4.0
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
@@ -28,6 +28,8 @@ ldap:
   net: ${CUSTOM_NETWORK_NAME}
   expose:
     - "389"
+  ports:
+    - "389:389"
   environment:
     SLAPD_PASSWORD: ${LDAP_PWD}
     SLAPD_DOMAIN: ${LDAP_DOMAIN}
