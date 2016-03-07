@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: johniepaulie/nginx:4.2
+  image: johniepaulie/nginx:4.3
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:
